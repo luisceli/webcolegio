@@ -4,19 +4,7 @@ import { ImageCarousel } from "./ImageCarousel";
 
 export const Hero = () => {
   return (
-    <section className="relative bg-[#2196F3] text-white overflow-hidden">
-      {/* Fondo con patrón SVG */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/images/patrones.png')", // Cambia la ruta del SVG
-          backgroundRepeat: "repeat",
-          backgroundSize: "500px 500px", // Ajusta el tamaño del patrón
-          opacity: 0.1,
-          transform: "rotate(-1deg)", // Gira el fondo (-10° de inclinación)
-          transformOrigin: "center",
-        }}
-      ></div>
+    <section className="relative bg-[#2196F3] text-white overflow-hidden ">
       <div className="container mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="z-10">
@@ -32,7 +20,6 @@ export const Hero = () => {
             <div className="inline-block bg-white text-[#2196F3] px-6 py-3 rounded-lg font-bold">
               Paz y Bien
             </div>
-            
           </div>
 
           <div className="relative z-10">

@@ -27,7 +27,7 @@ export const About = () => {
         <div className="relative">
           <div className="absolute inset-0 bg-[#FFA000] transform -rotate-6 rounded-lg"></div>
           <img
-            src="/images/escuela.png"
+            src="/images/nosotros.webp"
             alt="Nuestra institución"
             className="relative z-10 rounded-lg shadow-lg w-full h-full object-cover"
           />

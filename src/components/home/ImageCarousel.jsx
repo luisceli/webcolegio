@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  { src: "/images/alumnos.jpg", alt: "Estudiantes en clase" },
-  { src: "/images/esccuela.jpg", alt: "Actividades deportivas" },
-  { src: "/images/maestros.jpg", alt: "Laboratorio de ciencias" },
+  { src: "/images/estudiantes.webp", alt: "Estudiantes" },
+  { src: "/images/instituacion.webp", alt: "Lunes civico" },
+  { src: "/images/maestros.webp", alt: "Cuerpo docente" },
+  { src: "/images/preparatoria.webp", alt: "Niños de preparatoria" },
 ];
 
 export const ImageCarousel = () => {
