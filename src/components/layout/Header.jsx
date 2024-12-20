@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para controlar el menú móvil
   const location = useLocation(); // Obtiene la ubicación actual
 
   // Función para aplicar una clase de estilo activa a la sección actual
@@ -15,6 +16,7 @@ export const Header = () => {
     <header className="bg-[#2196F3] text-white">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
+          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img
               src="/images/logo.png"
@@ -26,6 +28,29 @@ export const Header = () => {
               <div>Fray Cristobal Zambrano</div>
             </div>
           </Link>
+
+          {/* Menú Hamburguesa (Versión Móvil) */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+
+          {/* Menú Principal (Versión Escritorio) */}
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
               <li>
@@ -51,6 +76,50 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
+
+        {/* Menú Móvil */}
+        {isMenuOpen && (
+          <nav className="md:hidden bg-[#1976D2]">
+            <ul className="flex flex-col space-y-4 p-4">
+              <li>
+                <Link
+                  to="/"
+                  className={getLinkClass("/")}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className={getLinkClass("/about")}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Sobre Nosotros
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/news"
+                  className={getLinkClass("/news")}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Noticias
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className={getLinkClass("/contact")}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contacto
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   );
