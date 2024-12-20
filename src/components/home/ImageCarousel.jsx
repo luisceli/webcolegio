@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
@@ -9,27 +9,56 @@ const images = [
 
 export const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
+    triggerTransition(() => setCurrentIndex(newIndex));
   };
 
   const nextSlide = () => {
     const isLastSlide = currentIndex === images.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+    triggerTransition(() => setCurrentIndex(newIndex));
   };
+
+  const triggerTransition = (callback) => {
+    setIsFading(true);
+    setTimeout(() => {
+      callback();
+      setIsFading(false);
+    }, 500); // Tiempo de animación
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000); // Cambio automático cada 4 segundos
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   return (
     <div className="relative w-full max-w-xl mx-auto">
-      <div className="relative h-[300px] md:h-[450px] w-full rounded-lg overflow-hidden">
-        <img
-          src={images[currentIndex].src}
-          alt={images[currentIndex].alt}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
-        />
+      <div className="relative h-[300px] md:h-[450px] w-full rounded-lg overflow-hidden bg-gray-200">
+        {/* Fondo fijo para evitar la transparencia */}
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image.src}
+            alt={image.alt}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+              index === currentIndex
+                ? "opacity-100"
+                : isFading
+                ? "opacity-0"
+                : "opacity-0"
+            }`}
+            style={{
+              zIndex: index === currentIndex ? 10 : 1,
+            }}
+          />
+        ))}
       </div>
       <button
         onClick={prevSlide}

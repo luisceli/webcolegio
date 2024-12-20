@@ -64,7 +64,7 @@ export const Footer = () => {
               >
                 <Facebook className="w-5 h-5" />
                 <span>Facebook</span>
-              </a>  
+              </a>
               <a
                 href="#"
                 className="flex items-center space-x-2 hover:text-[#D2B48C]"
@@ -82,7 +82,7 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-blue-400 text-center">
+        <div className="mt-8 pt-8 border-t border-[#FFA000] text-center">
           <p>
             &copy; {new Date().getFullYear()} Unidad Educativa Franciscana Fray
             Cristóbal Zambrano. Todos los derechos reservados.
