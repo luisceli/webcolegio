@@ -8,8 +8,9 @@ export const Hero = () => {
       <div className="container mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="z-10">
+            <p>Bienvenidos a nuestra Institución Educativa</p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Bienvenidos a nuestra Institución Educativa
+              Unidad Educativa Franciscana Fray Cristóbal Zambrano - Saraguro
             </h1>
             <p className="text-xl mb-8">
               Formando líderes con valores franciscanos para un mundo mejor

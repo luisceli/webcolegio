@@ -58,12 +58,13 @@ export const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Síguenos</h3>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/FRAYCRISTOBALZAMBRANO"
+                target="_blank"
                 className="flex items-center space-x-2 hover:text-[#D2B48C]"
               >
                 <Facebook className="w-5 h-5" />
                 <span>Facebook</span>
-              </a>
+              </a>  
               <a
                 href="#"
                 className="flex items-center space-x-2 hover:text-[#D2B48C]"
@@ -84,7 +85,7 @@ export const Footer = () => {
         <div className="mt-8 pt-8 border-t border-blue-400 text-center">
           <p>
             &copy; {new Date().getFullYear()} Unidad Educativa Franciscana Fray
-            Cristobal Zambrano. Todos los derechos reservados.
+            Cristóbal Zambrano. Todos los derechos reservados.
           </p>
         </div>
       </div>
