@@ -9,9 +9,9 @@ export const FacebookPosts = ({ numberOfPosts }) => {
   useEffect(() => {
     // URL de la API de Facebook con tu token de acceso y el ID de tu página
     const pageId = import.meta.env.VITE_FACEBOOK_PAGE_ID; // Reemplaza con tu token de acceso
-    console.log(pageId);
+
     const accessToken = import.meta.env.VITE_FACEBOOK_PAGE_TOKEN; // Reemplaza con el ID de tu página
-    console.log(accessToken);
+
     const url = `https://graph.facebook.com/${pageId}/posts?access_token=${accessToken}&fields=message,created_time,attachments`;
 
     // Hacer la solicitud GET a la API de Facebook
