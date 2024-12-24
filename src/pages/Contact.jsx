@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+import { SuccessModal } from "../components/modals/SuccessModal";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +9,8 @@ export const Contact = () => {
     email: "",
     message: "",
   });
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,10 +22,26 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    console.log("Formulario enviado:", formData);
-    // Resetear el formulario
-    setFormData({ name: "", email: "", message: "" });
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: "luisceli25@gmail.com",
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then((response) => {
+        setIsModalOpen(true);
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch((err) => {
+        alert("Error al enviar el mensaje. Por favor, intenta nuevamente.");
+      });
   };
 
   return (
@@ -46,6 +67,10 @@ export const Contact = () => {
             <p>uefraycristobalzambrano@gmail.com</p>
           </div>
         </div>
+        <SuccessModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
