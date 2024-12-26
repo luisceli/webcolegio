@@ -8,24 +8,24 @@ const values = [
     icon: Heart,
     title: "Valores Franciscanos",
     description:
-      "Formamos estudiantes con un fuerte sentido de servicio y amor al prójimo.",
+      "Formamos estudiantes con valores como : la paz, la alegría, la fraternidad y el respeto por la creación",
   },
   {
     icon: Book,
     title: "Excelencia Académica",
     description:
-      "Educación integral que combina lo mejor de la tradición con la innovación.",
+      "Educación integral que combina lo mejor de la tradición con la innovación , de acuerdo a nuestro lema: Letras, sabiduría y fraternidad.",
   },
   {
     icon: Users,
     title: "Comunidad",
-    description: "Construimos una comunidad educativa unida y comprometida.",
+    description: "Construimos una comunidad educativa unida, solidaria y comprometida a la sociedad Saragurense.",
   },
   {
     icon: Star,
     title: "Liderazgo",
     description:
-      "Desarrollamos líderes que impactan positivamente en la sociedad.",
+      "Desarrollamos líderes constructores que impactan positivamente en la sociedad.",
   },
 ];
 

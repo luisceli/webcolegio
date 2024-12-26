@@ -19,7 +19,7 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img
-              src="/images/logo.png"
+              src="/images/logoweb.jpg"
               alt="Logo Institucional"
               className="w-24 h-24 rounded-full"
             />
