@@ -11,8 +11,6 @@ export const Home = () => {
       <Hero />
       <MissionVision />
       <Values />
-      {/* <Autoridades />
-      <Docentes /> */}
       <StaffSection />
       <NewsList />
     </div>

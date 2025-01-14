@@ -7,7 +7,7 @@ export const About = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-[#654321] mb-6">Sobre Nosotros</h1>
 
-      {/* Historia y Fundación */}
+    
       <div className="mb-12">
         <h2 className="text-2xl font-bold text-[#654321] mb-4">Historia</h2>
         <div className="bg-white p-6 rounded-lg shadow-md">
@@ -34,7 +34,7 @@ export const About = () => {
         />
       </div>
 
-      {/* Oferta Académica */}
+    
       <h2 className="text-2xl font-bold text-[#654321] mb-6">
         Oferta Académica
       </h2>
@@ -76,7 +76,7 @@ export const About = () => {
         ))}
       </div>
 
-      {/* Instalaciones */}
+    
       <h2 className="text-2xl font-bold text-[#654321] mb-6">
         Nuestras Instalaciones
       </h2>
@@ -121,7 +121,6 @@ export const About = () => {
         <StaffSection />
     
 
-      {/* Imagen de la institución */}
       <div className="relative mt-12">
         <div className="absolute inset-0 bg-[#D2B48C] transform -rotate-3 rounded-lg"></div>
         <img

@@ -29,20 +29,19 @@ export const ImageCarousel = () => {
     setTimeout(() => {
       callback();
       setIsFading(false);
-    }, 500); // Tiempo de animación
+    }, 500);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 4000); // Cambio automático cada 4 segundos
+    }, 3000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 
   return (
     <div className="relative w-full max-w-xl mx-auto">
       <div className="relative h-[300px] md:h-[450px] w-full rounded-lg overflow-hidden bg-gray-200">
-        {/* Fondo fijo para evitar la transparencia */}
         {images.map((image, index) => (
           <img
             key={index}

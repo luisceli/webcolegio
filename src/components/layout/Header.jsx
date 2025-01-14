@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para controlar el menú móvil
-  const location = useLocation(); // Obtiene la ubicación actual
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
-  // Función para aplicar una clase de estilo activa a la sección actual
   const getLinkClass = (path) => {
     return location.pathname === path
-      ? "text-[#FFA000] font-semibold" // Resalta el enlace activo
-      : "hover:text-[#FFA000] transition-colors"; // Estilo por defecto
+      ? "text-[#FFA000] font-semibold"
+      : "hover:text-[#FFA000] transition-colors";
   };
 
   return (
@@ -29,7 +28,6 @@ export const Header = () => {
             </div>
           </Link>
 
-          {/* Menú Hamburguesa (Versión Móvil) */}
           <button
             className="md:hidden text-white focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -50,7 +48,6 @@ export const Header = () => {
             </svg>
           </button>
 
-          {/* Menú Principal (Versión Escritorio) */}
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
               <li>
@@ -77,7 +74,6 @@ export const Header = () => {
           </nav>
         </div>
 
-        {/* Menú Móvil */}
         {isMenuOpen && (
           <nav className="md:hidden bg-[#1976D2]">
             <ul className="flex flex-col space-y-4 p-4">

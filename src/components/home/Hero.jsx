@@ -30,7 +30,6 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Carrusel */}
           <div className="relative z-10">
             <ImageCarousel />
           </div>
@@ -39,7 +38,7 @@ export const Hero = () => {
 
       <div className="absolute inset-0 skew-y-6 transform origin-top-left bg-[#FFA000] z-0"></div>
 
-      {/* Fondo con patrón SVG */}
+     
       <div
         className="absolute inset-0 z-0"
         style={{

@@ -8,7 +8,6 @@ export const MissionVision = () => {
           Misión y Visión
         </h2>
         <div className="grid gap-8">
-          {/* Misión */}
           <div className="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-md border-t-4 border-t-[#654321]">
             <div className="md:w-1/2 md:pr-4">
               <h3 className="text-3xl font-bold text-[#654321] mb-4">Misión</h3>
@@ -33,7 +32,7 @@ export const MissionVision = () => {
               />
             </div>
           </div>
-          {/* Visión */}
+
           <div className="flex flex-col md:flex-row-reverse items-center bg-white p-6 rounded-lg shadow-md border-t-4 border-t-[#D2B48C]">
             <div className="md:w-1/2 md:pl-4">
               <h3 className="text-3xl font-bold text-[#D2B48C] mb-4">Visión</h3>
