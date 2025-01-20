@@ -66,6 +66,11 @@ export const Header = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/photos" className={getLinkClass("/photos")}>
+                  Fotos
+                </Link>
+              </li>
+              <li>
                 <Link to="/contact" className={getLinkClass("/contact")}>
                   Contacto
                 </Link>

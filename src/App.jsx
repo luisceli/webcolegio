@@ -7,6 +7,8 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { News } from "./pages/News";
 import { Contact } from "./pages/Contact";
+import { FacebookPhotos } from "./components/photos/FacebookPhotos";
+import StaffDetail from "./components/home/StaffDetail";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/news" element={<News />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/photos" element={<FacebookPhotos />} />
+            <Route path="/staff/:id" element={<StaffDetail />} />
           </Routes>
         </main>
         <Footer />

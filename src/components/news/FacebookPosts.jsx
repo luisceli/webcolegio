@@ -8,7 +8,7 @@ export const FacebookPosts = ({ numberOfPosts }) => {
 
   useEffect(() => {
     const pageId = import.meta.env.VITE_FACEBOOK_PAGE_ID;
-
+ 
     const accessToken = import.meta.env.VITE_FACEBOOK_PAGE_TOKEN;
 
     const url = `https://graph.facebook.com/${pageId}/posts?access_token=${accessToken}&fields=message,created_time,attachments`;

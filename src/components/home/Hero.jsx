@@ -7,7 +7,7 @@ export const Hero = () => {
     <section className="relative bg-[#2196F3] text-white overflow-hidden">
       <div className="container mx-auto px-4 py-20">
         <div className="grid md:grid-cols-3 gap-4 items-center">
-          {/* Logo y Texto */}
+          
           <div className="z-10 flex flex-col md:flex-row items-center md:items-start md:col-span-2">
             <img
               src="/images/logo.png"

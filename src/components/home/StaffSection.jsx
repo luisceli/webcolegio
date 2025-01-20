@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { staffMembers } from "../../data/StaffData";
 
 export const StaffSection = () => {
@@ -57,7 +58,7 @@ export const StaffSection = () => {
   );
 
   return (
-    <section className=" py-10 relative ">
+    <section className="py-10 relative">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-[#654321] mb-12">
           Nuestras Autoridades y Personal Docente
@@ -76,9 +77,9 @@ export const StaffSection = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="relative px-4 pt-16 pb-4 text-center">
+                <div className="relative px-4 pt-24 pb-4 text-center">
                   <div className="absolute left-1/2 -translate-x-1/2 -top-12">
-                    <div className="w-24 h-24 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                    <div className="w-36 h-36 rounded-full border-4 border-white overflow-hidden shadow-lg">
                       <img
                         src={member.profileImage}
                         alt={member.name}
@@ -92,6 +93,12 @@ export const StaffSection = () => {
                   <p className="text-[#D2B48C] font-medium mb-4">
                     {member.role}
                   </p>
+                  <Link
+                    to={`/staff/${member.id}`}
+                    className="text-[#654321] hover:text-[#D2B48C] transition-colors"
+                  >
+                    Ver más
+                  </Link>
                 </div>
               </div>
             ))}
