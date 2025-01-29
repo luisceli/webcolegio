@@ -13,8 +13,8 @@ export const Header = () => {
 
   return (
     <header className="bg-[#2196F3] text-white">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+      <div className="container px-4 mx-auto">
+        <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img
@@ -23,13 +23,12 @@ export const Header = () => {
               className="w-24 h-24 rounded-full"
             />
             <div className="text-sm md:text-base">
-              <div className="font-bold">Unidad Educativa Franciscana</div>
-              <div>Fray Cristobal Zambrano</div>
+              <p className="text-2xl font-bold">Franciscanos de Corazón</p>
             </div>
           </Link>
 
           <button
-            className="md:hidden text-white focus:outline-none"
+            className="text-white md:hidden focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg
@@ -81,7 +80,7 @@ export const Header = () => {
 
         {isMenuOpen && (
           <nav className="md:hidden bg-[#1976D2]">
-            <ul className="flex flex-col space-y-4 p-4">
+            <ul className="flex flex-col p-4 space-y-4">
               <li>
                 <Link
                   to="/"
