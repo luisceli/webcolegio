@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://uefczsaraguro.com/sitemap.xml
