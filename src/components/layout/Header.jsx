@@ -110,6 +110,15 @@ export const Header = () => {
               </li>
               <li>
                 <Link
+                  to="/photos"
+                  className={getLinkClass("/photos")}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Fotos
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/contact"
                   className={getLinkClass("/contact")}
                   onClick={() => setIsMenuOpen(false)}
