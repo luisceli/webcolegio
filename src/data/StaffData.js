@@ -5,14 +5,13 @@ export const staffMembers = [
     profileImage: "/images/rector.webp?height=200&width=200",
     name: "Mgs.Fray Ramiro Cachimuel",
     role: "Rector",
-    inf: "lorem ipsum",
   },
 
   {
     id: "2",
     headerImage: "/images/fondo.png",
     profileImage: "/images/13.webp?height=200&width=200",
-    name: "Mgtr. Fernando González",
+    name: "Mgs. Fernando González",
     role: "Vice-Rector",
   },
   {
@@ -118,7 +117,7 @@ export const staffMembers = [
     headerImage: "/images/fondo.png",
     profileImage: "/images/16.webp?height=200&width=200",
     name: "Mgs. Mónica Paulina Chalaco Ordoñez",
-    role: "Docente de la especialidad de ",
+    role: "Docente de la especialidad  ",
   },
   {
     id: "18",

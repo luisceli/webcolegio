@@ -11,7 +11,7 @@ export const Home = () => {
       <Hero />
       <MissionVision />
       <Values />
-      <StaffSection />
+      {/* <StaffSection /> */}
       <NewsList />
     </div>
   );
