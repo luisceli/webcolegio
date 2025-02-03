@@ -3,7 +3,7 @@ export const staffMembers = [
     id: "1",
     headerImage: "/images/fondo.png",
     profileImage: "/images/rector.webp?height=200&width=200",
-    name: "Mgs.Fray Ramiro Cachimuel",
+    name: "Mgs. Fray Ramiro Cachimuel",
     role: "Rector",
   },
 
@@ -18,7 +18,7 @@ export const staffMembers = [
     id: "3",
     headerImage: "/images/fondo.png",
     profileImage: "/images/1.webp?height=200&width=200",
-    name: "Lic.Karina del Rocio Gálvez Castro",
+    name: "Lic. Karina del Rocio Gálvez Castro",
     role: "Docente de la especialidad de Ciencias",
   },
   {
@@ -32,7 +32,7 @@ export const staffMembers = [
     id: "5",
     headerImage: "/images/fondo.png",
     profileImage: "/images/3.webp?height=200&width=200",
-    name: "Lic.Torres Tocto Jorge Luis ",
+    name: "Lic. Torres Tocto Jorge Luis ",
     role: "Docente de la especialidad de Lengua y Literatura",
   },
   {
@@ -109,7 +109,7 @@ export const staffMembers = [
     id: "16",
     headerImage: "/images/fondo.png",
     profileImage: "/images/15.webp?height=200&width=200",
-    name: "Mgs.Gorky Igor Jara González ",
+    name: "Mgs. Gorky Igor Jara González ",
     role: "Docente de la especialida de Matemáticas",
   },
   {
@@ -130,7 +130,7 @@ export const staffMembers = [
     id: "19",
     headerImage: "/images/fondo.png",
     profileImage: "/images/18.webp?height=200&width=200",
-    name: "Dra.Luz Marina Ordóñez Morocho",
+    name: "Dra. Luz Marina Ordóñez Morocho",
     role: "Docente de la especialidad en Psicología Infantil",
   },
   {
