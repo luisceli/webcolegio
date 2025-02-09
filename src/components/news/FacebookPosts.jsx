@@ -20,19 +20,11 @@ export const FacebookPosts = ({ numberOfPosts }) => {
         setPosts(response.data.data);
         setLoading(false);
       })
-      .catch(() => {
+      .catch((error) => {
         setError("Error al obtener las publicaciones de Facebook");
         setLoading(false);
       });
   }, []);
-
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  const getFacebookPostUrl = (postId) => {
-    return isMobile
-      ? `fb://facewebmodal/f?href=https://www.facebook.com/${postId}`
-      : `https://www.facebook.com/${postId}`;
-  };
 
   const truncateText = (text, maxLength) => {
     if (text && text.length > maxLength) {
@@ -113,7 +105,7 @@ export const FacebookPosts = ({ numberOfPosts }) => {
               </div>
 
               <a
-                href={getFacebookPostUrl(post.id)}
+                href={`https://www.facebook.com/${post.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center justify-center gap-2 bg-[#f59e0b] text-white py-2 px-6 rounded-full hover:bg-[#fda713] transition-colors duration-300 mx-auto"
