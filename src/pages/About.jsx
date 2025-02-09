@@ -4,14 +4,14 @@ import { StaffSection } from "../components/home/StaffSection";
 
 export const About = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container px-4 py-8 mx-auto">
       <h1 className="text-3xl font-bold text-[#654321] mb-6">Sobre Nosotros</h1>
 
     
       <div className="mb-12">
         <h2 className="text-2xl font-bold text-[#654321] mb-4">Historia</h2>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-600 mb-4">
+        <div className="p-6 bg-white rounded-lg shadow-md">
+          <p className="mb-4 text-gray-600">
             La Orden Franciscana, cumpliendo el mandato de Jesucristo y la
             vivencia del Evangelio, fundó el 31 de octubre de 1967 una
             institución educativa con la finalidad de ofrecer a los niños/as y
@@ -28,9 +28,9 @@ export const About = () => {
           </p>
         </div>
         <img
-          src="/images/maestros.jpg"
+          src="/images/maestros.webp"
           alt="Personal docente"
-          className="mt-4 rounded-lg max-w-full h-auto mx-auto"
+          className="object-cover w-full mt-6 rounded-lg shadow-md h-96"
         />
       </div>
 
@@ -38,25 +38,25 @@ export const About = () => {
       <h2 className="text-2xl font-bold text-[#654321] mb-6">
         Oferta Académica
       </h2>
-      <div className="grid md:grid-cols-3 gap-6 mb-12">
+      <div className="grid gap-6 mb-12 md:grid-cols-3">
         {[
           {
             title: "Educación Inicial",
             description:
               "Buscamos desarrollar al máximo las potencialidades básico-sociales, en un ambiente lúdico y con una atención personalizada, despertando y fortaleciendo destrezas.",
-            image: "/images/inicial.png",
+            image: "/images/inicial.webp",
           },
           {
             title: "Educación General Básica",
             description:
               "Desarrollar las habilidades, destrezas y competencias, potenciando las áreas fundamentales que le permitan adquirir conocimientos significativos y funcionales.",
-            image: "/images/basica.png",
+            image: "/images/basica.webp",
           },
           {
             title: "Bachillerato General Unificado",
             description:
               "Por medio de las diferentes ciencias, el estudiante deberá desarrollar sus capacidades intelectuales, su pensamiento crítico, constructivo, humano y de armonía con la naturaleza.",
-            image: "/images/BGU.png",
+            image: "/images/BGU.webp",
           },
         ].map((item, index) => (
           <div
@@ -70,7 +70,7 @@ export const About = () => {
             <img
               src={item.image}
               alt={item.title}
-              className="mt-4 w-full h-40 object-cover rounded-lg"
+              className="object-cover w-full h-64 mt-4 rounded-lg"
             />
           </div>
         ))}
@@ -80,7 +80,7 @@ export const About = () => {
       <h2 className="text-2xl font-bold text-[#654321] mb-6">
         Nuestras Instalaciones
       </h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+      <div className="grid gap-4 mb-8 md:grid-cols-2 lg:grid-cols-3">
         {[
           "Aulas amplias y pedagógicas",
           "Laboratorios de Química y Biología",
@@ -95,7 +95,7 @@ export const About = () => {
         ].map((facility, index) => (
           <div
             key={index}
-            className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            className="p-4 transition-shadow bg-white rounded-lg shadow-md hover:shadow-lg"
           >
             <div className="flex items-center space-x-2">
               <svg
@@ -124,7 +124,7 @@ export const About = () => {
       <div className="relative mt-12">
         <div className="absolute inset-0 bg-[#D2B48C] transform -rotate-3 rounded-lg"></div>
         <img
-          src="/images/about-us.png"
+          src="/images/about-us.webp"
           alt="Nuestra institución"
           className="relative z-10 rounded-lg shadow-lg w-full h-[400px] object-cover"
         />

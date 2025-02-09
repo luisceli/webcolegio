@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { PulseLoader } from "react-spinners";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export const FacebookPhotos = () => {
   const [photos, setPhotos] = useState([]);
@@ -59,57 +62,99 @@ export const FacebookPhotos = () => {
     }
   };
 
+  const LoadingSkeleton = () => (
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {[...Array(8)].map((_, index) => (
+        <div
+          key={index}
+          className="overflow-hidden bg-white rounded-lg shadow-md"
+        >
+          <Skeleton height={256} />
+        </div>
+      ))}
+    </div>
+  );
+
   return (
-    <div className="bg-gray-100 min-h-screen">
-      {loading && <div className="text-center p-4">Cargando...</div>}
-      {error && <div className="text-center p-4 text-red-500">{error}</div>}
-      <div className="container mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {photos.map((photo) => (
-          <div
-            key={photo.id}
-            className="group relative bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300"
-            onClick={() => setSelectedPhoto(photo.images[0].source)}
-          >
-            <img
-              src={photo.images[0].source}
-              alt="Facebook Album Photo"
-              className="w-full h-64 object-cover"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
-              <p className="text-white text-lg font-semibold opacity-0 group-hover:opacity-100">
-                Ver más
-              </p>
+    <div className="min-h-screen py-8 bg-gray-100">
+      <div className="container px-4 mx-auto">
+        <h2 className="relative mb-8 text-3xl font-bold text-center text-gray-800">
+          Galería de Fotos
+          <span className="block w-24 h-1 mx-auto mt-2 bg-blue-500"></span>
+        </h2>
+
+        {loading && !photos.length ? (
+          <LoadingSkeleton />
+        ) : error ? (
+          <div className="p-8 text-center">
+            <div className="inline-block p-4 bg-red-100 rounded-lg">
+              <p className="font-medium text-red-500">{error}</p>
+              <button
+                onClick={() => window.location.reload()}
+                className="px-4 py-2 mt-4 text-white transition-colors bg-red-500 rounded hover:bg-red-600"
+              >
+                Reintentar
+              </button>
             </div>
           </div>
-        ))}
-      </div>
-      {nextPage && !loading && (
-        <div className="text-center my-6">
-          <button
-            onClick={fetchNextPage}
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 shadow-md"
-          >
-            Cargar más fotos
-          </button>
-        </div>
-      )}
-      {selectedPhoto && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="relative">
-            <button
-              onClick={() => setSelectedPhoto(null)}
-              className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full hover:bg-red-600"
-            >
-              ✕
-            </button>
-            <img
-              src={selectedPhoto}
-              alt="Selected"
-              className="max-w-full max-h-screen rounded-lg shadow-lg"
-            />
+        ) : (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {photos.map((photo) => (
+              <div
+                key={photo.id}
+                className="relative overflow-hidden transition-transform duration-300 transform bg-white rounded-lg shadow-md cursor-pointer group hover:scale-105"
+                onClick={() => setSelectedPhoto(photo.images[0].source)}
+              >
+                <img
+                  src={photo.images[0].source}
+                  alt="Facebook Album Photo"
+                  className="object-cover w-full h-64"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-black bg-opacity-0 group-hover:bg-opacity-50">
+                  <p className="text-lg font-semibold text-white opacity-0 group-hover:opacity-100">
+                    Ver más
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-      )}
+        )}
+
+        {nextPage && !loading && (
+          <div className="my-6 text-center">
+            <button
+              onClick={fetchNextPage}
+              className="flex items-center justify-center px-6 py-2 mx-auto space-x-2 text-white transition-colors bg-blue-500 rounded-lg shadow-md hover:bg-blue-600"
+              disabled={loading}
+            >
+              {loading ? (
+                <PulseLoader color="#ffffff" size={8} />
+              ) : (
+                "Cargar más fotos"
+              )}
+            </button>
+          </div>
+        )}
+
+        {selectedPhoto && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 backdrop-blur-sm">
+            <div className="relative max-w-4xl mx-4">
+              <button
+                onClick={() => setSelectedPhoto(null)}
+                className="absolute p-2 text-white transition-colors bg-red-500 rounded-full shadow-lg -top-4 -right-4 hover:bg-red-600"
+              >
+                ✕
+              </button>
+              <img
+                src={selectedPhoto}
+                alt="Selected"
+                className="max-w-full max-h-[80vh] rounded-lg shadow-2xl"
+              />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

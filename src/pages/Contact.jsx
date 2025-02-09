@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-
 import { SuccessModal } from "../components/modals/SuccessModal";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,47 +35,52 @@ export const Contact = () => {
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
-      .then((response) => {
+      .then(() => {
         setIsModalOpen(true);
         setFormData({ name: "", email: "", message: "" });
       })
-      .catch((err) => {
+      .catch(() => {
         alert("Error al enviar el mensaje. Por favor, intenta nuevamente.");
       });
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-[#2196F3] mb-6">Contáctanos</h1>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div>
-          <p className="mb-4">
+    <div className="container px-6 py-12 mx-auto">
+      <h1 className="text-4xl font-bold text-[#2196F3] mb-8 text-center">
+        Contáctanos
+      </h1>
+      <div className="grid items-center gap-12 md:grid-cols-2">
+        {/* Información de contacto */}
+        <div className="space-y-6">
+          <p className="text-lg text-gray-700">
             Estamos aquí para responder a tus preguntas y escuchar tus
             comentarios. No dudes en ponerte en contacto con nosotros.
           </p>
-          <div className="mb-4">
-            <h2 className="text-xl font-semibold mb-2">Dirección</h2>
+          <div className="flex items-center gap-4">
+            <MapPin className="text-[#2196F3]" />
             <p>Calle Loja y Fray Cristóbal Zambrano</p>
           </div>
-          <div className="mb-4">
-            <h2 className="text-xl font-semibold mb-2">Teléfono</h2>
-            <p>(072) 200 560 </p>
-            <p>(072) 200 185</p>
+          <div className="flex items-center gap-4">
+            <Phone className="text-[#2196F3]" />
+            <div>
+              <p>(072) 200 560</p>
+              <p>(072) 200 185</p>
+            </div>
           </div>
-          <div>
-            <h2 className="text-xl font-semibold mb-2">Email</h2>
+          <div className="flex items-center gap-4">
+            <Mail className="text-[#2196F3]" />
             <p>uefraycristobalzambrano@gmail.com</p>
           </div>
         </div>
-        <SuccessModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
-        <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Formulario */}
+        <form
+          onSubmit={handleSubmit}
+          className="p-6 space-y-6 bg-white rounded-lg shadow-lg"
+        >
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700 "
+              className="block text-sm font-medium text-gray-700"
             >
               Nombre
             </label>
@@ -86,7 +91,7 @@ export const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#2196F3] focus:ring focus:ring-[#2196F3] focus:ring-opacity-50"
+              className="mt-2 block w-full p-3 rounded-md border border-gray-300 shadow-sm focus:border-[#2196F3] focus:ring-[#2196F3] focus:ring-2"
             />
           </div>
           <div>
@@ -103,7 +108,7 @@ export const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#2196F3] focus:ring focus:ring-[#2196F3] focus:ring-opacity-50"
+              className="mt-2 block w-full p-3 rounded-md border border-gray-300 shadow-sm focus:border-[#2196F3] focus:ring-[#2196F3] focus:ring-2"
             />
           </div>
           <div>
@@ -120,17 +125,21 @@ export const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#2196F3] focus:ring focus:ring-[#2196F3] focus:ring-opacity-50"
+              className="mt-2 block w-full p-3 rounded-md border border-gray-300 shadow-sm focus:border-[#2196F3] focus:ring-[#2196F3] focus:ring-2"
             ></textarea>
           </div>
           <button
             type="submit"
-            className="w-full bg-[#2196F3] text-white py-2 px-4 rounded-md hover:bg-[#1976D2] transition-colors duration-300"
+            className="w-full bg-[#2196F3] text-white py-3 rounded-md hover:bg-[#1976D2] transition-all duration-300"
           >
             Enviar Mensaje
           </button>
         </form>
       </div>
+      <SuccessModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

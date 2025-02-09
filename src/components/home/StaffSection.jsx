@@ -58,70 +58,74 @@ export const StaffSection = () => {
   );
 
   return (
-    <section className="py-10 relative">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-[#654321] mb-12">
+    <section className="relative py-6 sm:py-10">
+      <div className="container px-2 mx-auto sm:px-4">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-[#654321] mb-8 sm:mb-12">
           Nuestras Autoridades y Personal Docente
         </h2>
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
             {visibleStaff.map((member, index) => (
               <div
                 key={currentIndex + index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300"
+                className="flex flex-col w-full h-full max-w-sm mx-auto overflow-hidden transition-transform duration-300 transform bg-white rounded-lg shadow-lg hover:-translate-y-1"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="flex-shrink-0 overflow-hidden h-36 sm:h-48">
                   <img
                     src={member.headerImage}
                     alt={`Instalaciones - ${member.role}`}
-                    className="w-full h-full object-cover"
+                    className="object-cover w-full h-full"
                   />
                 </div>
-                <div className="relative px-4 pt-24 pb-4 text-center">
-                  <div className="absolute left-1/2 -translate-x-1/2 -top-12">
-                    <div className="w-36 h-36 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                <div className="relative flex flex-col flex-grow px-3 pt-20 pb-4 sm:px-4 sm:pt-24">
+                  <div className="absolute -translate-x-1/2 left-1/2 -top-12">
+                    <div className="flex-shrink-0 w-32 h-32 overflow-hidden border-4 border-white rounded-full shadow-lg sm:w-44 sm:h-44">
                       <img
                         src={member.profileImage}
                         alt={member.name}
-                        className="w-full h-full object-cover"
+                        className="object-cover w-full h-full mt-2"
                       />
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold text-[#654321]">
-                    {member.name}
-                  </h3>
-                  <p className="text-[#D2B48C] font-medium mb-4">
-                    {member.role}
-                  </p>
-                  <Link
-                    to={`/staff/${member.id}`}
-                    className="text-[#654321] hover:text-[#D2B48C] transition-colors"
-                  >
-                    Ver más
-                  </Link>
+                  <div className="flex flex-col items-center justify-between flex-grow">
+                    <div className="w-full">
+                      <h3 className="text-base sm:text-lg font-bold text-[#654321] mt-6 sm:mt-10 line-clamp-2 text-center h-12 sm:h-14">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm sm:text-base text-[#D2B48C] font-medium mb-3 sm:mb-4 line-clamp-2 text-center h-10 sm:h-12">
+                        {member.role}
+                      </p>
+                    </div>
+                    <Link
+                      to={`/staff/${member.id}`}
+                      className="text-sm sm:text-base text-[#654321] hover:text-[#D2B48C] transition-colors mt-auto"
+                    >
+                      Ver más
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 bg-white p-2 rounded-full shadow-lg text-[#654321] hover:text-[#D2B48C] transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-6 bg-white p-1.5 sm:p-2 rounded-full shadow-lg text-[#654321] hover:text-[#D2B48C] transition-colors"
             aria-label="Previous slide"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 bg-white p-2 rounded-full shadow-lg text-[#654321] hover:text-[#D2B48C] transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-6 bg-white p-1.5 sm:p-2 rounded-full shadow-lg text-[#654321] hover:text-[#D2B48C] transition-colors"
             aria-label="Next slide"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={20} className="sm:w-6 sm:h-6" />
           </button>
         </div>
-        <div className="text-center mt-8">
+        <div className="mt-6 text-center sm:mt-8">
           <button
             onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-            className="text-[#654321] hover:text-[#D2B48C] transition-colors"
+            className="text-sm sm:text-base text-[#654321] hover:text-[#D2B48C] transition-colors"
           >
             {isAutoPlaying ? "Pausar" : "Reproducir"} presentación
           </button>

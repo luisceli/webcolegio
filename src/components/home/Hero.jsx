@@ -9,7 +9,7 @@ export const Hero = () => {
         <div className="grid items-center gap-4 md:grid-cols-3">
           <div className="z-10 flex flex-col items-center md:flex-row md:items-start md:col-span-2">
             <img
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Logo"
               className="w-40 h-40 rounded-full md:w-56 md:h-56 md:mr-6 md:mt-10 "
             />
@@ -40,7 +40,7 @@ export const Hero = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/images/patrones.png')",
+          backgroundImage: "url('/images/patrones.webp')",
           backgroundRepeat: "repeat",
           backgroundSize: "500px 500px",
           opacity: 0.1,
