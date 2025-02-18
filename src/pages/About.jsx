@@ -7,16 +7,17 @@ export const About = () => {
     <div className="container px-4 py-8 mx-auto">
       <h1 className="text-3xl font-bold text-[#654321] mb-6">Sobre Nosotros</h1>
 
-    
       <div className="mb-12">
         <h2 className="text-2xl font-bold text-[#654321] mb-4">Historia</h2>
         <div className="p-6 bg-white rounded-lg shadow-md">
           <p className="mb-4 text-gray-600">
-            La Orden Franciscana, cumpliendo el mandato de Jesucristo y la
-            vivencia del Evangelio, fundó el 31 de octubre de 1967 una
-            institución educativa con la finalidad de ofrecer a los niños/as y
-            jóvenes una formación científica y franciscana para el servicio de
-            la patria.
+            La Orden Franciscana, en cumplimiento del mandato de Jesucristo –
+            Enseña el Evangelio a todas las criaturas, se fundó el 03 de octubre
+            de 1967 una institución educativa. Esta iniciativa fue encabezada
+            por el +Rvdo. Padre Fray Felipe Cepeda, OFM, como fundador, y por la
+            Sra. Profesora Elva Pachar, en calidad de cofundadora, con el
+            propósito de ofrecer a niños y jóvenes una formación científica y
+            franciscana orientada al servicio de la patria.
           </p>
           <p className="text-gray-600">
             Nuestro perfil formativo en un ambiente de libertad, nos permite
@@ -34,7 +35,6 @@ export const About = () => {
         />
       </div>
 
-    
       <h2 className="text-2xl font-bold text-[#654321] mb-6">
         Oferta Académica
       </h2>
@@ -76,7 +76,6 @@ export const About = () => {
         ))}
       </div>
 
-    
       <h2 className="text-2xl font-bold text-[#654321] mb-6">
         Nuestras Instalaciones
       </h2>
@@ -117,9 +116,7 @@ export const About = () => {
         ))}
       </div>
 
-      
-        <StaffSection />
-    
+      <StaffSection />
 
       <div className="relative mt-12">
         <div className="absolute inset-0 bg-[#D2B48C] transform -rotate-3 rounded-lg"></div>

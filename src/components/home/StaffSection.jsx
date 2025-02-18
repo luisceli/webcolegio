@@ -47,7 +47,7 @@ export const StaffSection = () => {
   useEffect(() => {
     let interval;
     if (isAutoPlaying) {
-      interval = setInterval(nextSlide, 5000);
+      interval = setInterval(nextSlide, 8000);
     }
     return () => clearInterval(interval);
   }, [isAutoPlaying, nextSlide]);
@@ -83,7 +83,7 @@ export const StaffSection = () => {
                       <img
                         src={member.profileImage}
                         alt={member.name}
-                        className="object-cover w-full h-full mt-2"
+                        className="object-cover object-top w-full h-full mt-2"
                       />
                     </div>
                   </div>
