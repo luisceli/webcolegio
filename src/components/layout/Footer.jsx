@@ -1,21 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Facebook,
-  Instagram,
-  Twitter,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Facebook } from "lucide-react";
 
 export const Footer = () => {
   return (
     <footer className="bg-[#654321] text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container px-4 mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
-            <h3 className="text-xl font-bold mb-4">Contacto</h3>
+            <h3 className="mb-4 text-xl font-bold">Contacto</h3>
             <p className="flex items-center space-x-2">
               <MapPin className="w-5 h-5 text-[#D2B48C]" />
               <span>Dirección: Calle Loja y Fray Cristóbal Zambrano</span>
@@ -30,7 +23,7 @@ export const Footer = () => {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">Enlaces Rápidos</h3>
+            <h3 className="mb-4 text-xl font-bold">Enlaces Rápidos</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="hover:text-[#D2B48C]">
@@ -55,7 +48,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">Síguenos</h3>
+            <h3 className="mb-4 text-xl font-bold">Síguenos</h3>
             <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/FRAYCRISTOBALZAMBRANO"
@@ -64,20 +57,6 @@ export const Footer = () => {
               >
                 <Facebook className="w-5 h-5" />
                 <span>Facebook</span>
-              </a>
-              <a
-                href="#"
-                className="flex items-center space-x-2 hover:text-[#D2B48C]"
-              >
-                <Instagram className="w-5 h-5" />
-                <span>Instagram</span>
-              </a>
-              <a
-                href="#"
-                className="flex items-center space-x-2 hover:text-[#D2B48C]"
-              >
-                <Twitter className="w-5 h-5" />
-                <span>Twitter</span>
               </a>
             </div>
           </div>
