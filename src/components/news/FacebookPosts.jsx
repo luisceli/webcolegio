@@ -111,7 +111,7 @@ export const FacebookPosts = ({ numberOfPosts }) => {
               <a
                 href={
                   isMobile()
-                    ? `fb://facewebmodal/f?href=https://www.facebook.com/${post.id}`
+                    ? `fb://page${post.id}`
                     : `https://www.facebook.com/${post.id}`
                 }
                 target="_blank"
