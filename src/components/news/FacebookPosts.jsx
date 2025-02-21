@@ -33,6 +33,10 @@ export const FacebookPosts = ({ numberOfPosts }) => {
     return text;
   };
 
+  const isMobile = () => {
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  };
+
   const LoadingSkeleton = () => (
     <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 md:grid-cols-3">
       {[...Array(numberOfPosts || 6)].map((_, index) => (
@@ -105,7 +109,11 @@ export const FacebookPosts = ({ numberOfPosts }) => {
               </div>
 
               <a
-                href={`https://www.facebook.com/${post.id}`}
+                href={
+                  isMobile()
+                    ? `fb://facewebmodal/f?href=https://www.facebook.com/${post.id}`
+                    : `https://www.facebook.com/${post.id}`
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center justify-center gap-2 bg-[#f59e0b] text-white py-2 px-6 rounded-full hover:bg-[#fda713] transition-colors duration-300 mx-auto"

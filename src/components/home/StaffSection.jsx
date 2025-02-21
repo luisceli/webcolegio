@@ -83,7 +83,11 @@ export const StaffSection = () => {
                       <img
                         src={member.profileImage}
                         alt={member.name}
-                        className="object-cover object-top w-full h-full mt-2"
+                        className={`object-cover object-top ${
+                          member.profileImage === "/images/Inspectora.webp"
+                            ? "w-48 h-48 -mt-4 relative"
+                            : "w-full h-full mt-2"
+                        }`}
                       />
                     </div>
                   </div>
